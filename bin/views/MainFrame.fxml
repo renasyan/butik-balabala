@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="973.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.gameController">
+   <children>
+      <ImageView fitHeight="541.0" fitWidth="994.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assets/bg.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="downloadBTN" layoutX="802.0" layoutY="422.0" mnemonicParsing="false" onAction="#downloadButton" prefHeight="31.0" prefWidth="127.0" text="Download" textAlignment="CENTER" />
+      <ComboBox fx:id="skinToneCB" layoutX="61.0" layoutY="77.0" onAction="#displaySkinTone" prefHeight="58.0" prefWidth="175.0" promptText="Skin Tone" />
+      <ComboBox fx:id="characterCB" layoutX="61.0" layoutY="162.0" onAction="#displayChar" prefHeight="58.0" prefWidth="175.0" promptText="Character" />
+      <ComboBox fx:id="ekspressionCB" layoutX="61.0" layoutY="241.0" onAction="#displayEx" prefHeight="58.0" prefWidth="175.0" promptText="Expression" />
+      <ComboBox fx:id="customCB" layoutX="61.0" layoutY="319.0" onAction="#displayCustom" prefHeight="58.0" prefWidth="175.0" promptText="Custom" />
+      <StackPane layoutX="351.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="246.0" prefWidth="272.0">
+         <children>
+            <ImageView fx:id="baseImage" fitHeight="246.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="charImage" fitHeight="246.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="faceImage" fitHeight="246.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="accImage" fitHeight="246.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="customImage" fitHeight="246.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </StackPane>
+      <ComboBox fx:id="accCB" layoutX="61.0" layoutY="393.0" onAction="#displayAcc" prefHeight="58.0" prefWidth="175.0" promptText="Accessories" />
+   </children>
+</AnchorPane>

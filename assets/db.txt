@@ -1,0 +1,18 @@
+Mentah,base,file:../ButikBalaBala/assets/base/mentah.png
+Mateng,base,file:../ButikBalaBala/assets/base/mateng.png
+Gosong,base,file:../ButikBalaBala/assets/base/gosong.png
+Setengah Mateng,base,file:../ButikBalaBala/assets/base/setengah mateng.png
+Kacamata,acc,file:../ButikBalaBala/assets/acc/kacamata.png
+Pita,acc,file:../ButikBalaBala/assets/acc/pita.png
+Topi,acc,file:../ButikBalaBala/assets/acc/topi.png
+Dress Pink,baju,file:../ButikBalaBala/assets/costum/dress pink.png
+Kemeja Telkom,baju,file:../ButikBalaBala/assets/costum/kemeja telkom.png
+Jahim,baju,file:../ButikBalaBala/assets/costum/jahim.png
+Bahagia,expression,file:../ButikBalaBala/assets/expression/bahagia.png
+Kaget,expression,file:../ButikBalaBala/assets/expression/kaget.png
+Marah,expression,file:../ButikBalaBala/assets/expression/marah.png
+Sedih,expression,file:../ButikBalaBala/assets/expression/sedih.png
+Wink,expression,file:../ButikBalaBala/assets/expression/wink.png
+Campur,tipe,file:../ButikBalaBala/assets/tipe/campur.png
+Jagung,tipe,file:../ButikBalaBala/assets/tipe/jagung.png
+Sayur,tipe,file:../ButikBalaBala/assets/tipe/sayur.png
