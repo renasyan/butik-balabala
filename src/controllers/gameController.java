@@ -14,6 +14,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
@@ -24,7 +26,7 @@ import javafx.scene.layout.AnchorPane;
 import models.Clothes;
 
 
-public class gameController {
+public class gameController implements interfaceBalabala {
 
     @FXML
     private AnchorPane root;
@@ -84,9 +86,6 @@ public class gameController {
         customComboBox();
         accComboBox();
 
-        // Image imagePath = new Image(getClass().getResourceAsStream(path));
-        // String path = "file:../ButikBalaBala/assets/base/base-2.png";
-        // baseImage.setImage(new Image(path));
     }
 
     @FXML
@@ -96,7 +95,7 @@ public class gameController {
             for (Clothes item : items) {
                 if (selectedName.equals(item.getItemName()) && "base".equalsIgnoreCase(item.getItemCategory())) {
                     baseImage.setImage(new Image(item.getItemPath()));
-                    System.out.println("Selected Path: " + item.getItemPath());
+                    // System.out.println("Selected Path: " + item.getItemPath());
                     break;
                 }
             }
@@ -110,7 +109,7 @@ public class gameController {
             for (Clothes item : items) {
                 if (selectedName.equals(item.getItemName()) && "tipe".equalsIgnoreCase(item.getItemCategory())) {
                     charImage.setImage(new Image(item.getItemPath()));
-                    System.out.println("Selected Path: " + item.getItemPath());
+                    // System.out.println("Selected Path: " + item.getItemPath());
                     break;
                 }
             }
@@ -125,7 +124,7 @@ public class gameController {
             for (Clothes item : items) {
                 if (selectedName.equals(item.getItemName()) && "baju".equalsIgnoreCase(item.getItemCategory())) {
                     customImage.setImage(new Image(item.getItemPath()));
-                    System.out.println("Selected Path: " + item.getItemPath());
+                    // System.out.println("Selected Path: " + item.getItemPath());
                     break;
                 }
             }
@@ -139,7 +138,7 @@ public class gameController {
             for (Clothes item : items) {
                 if (selectedName.equals(item.getItemName()) && "acc".equalsIgnoreCase(item.getItemCategory())) {
                     accImage.setImage(new Image(item.getItemPath()));
-                    System.out.println("Selected Path: " + item.getItemPath());
+                    // System.out.println("Selected Path: " + item.getItemPath());
                     break;
                 }
             }
@@ -153,7 +152,7 @@ public class gameController {
             for (Clothes item : items) {
                 if (selectedName.equals(item.getItemName()) && "expression".equalsIgnoreCase(item.getItemCategory())) {
                     faceImage.setImage(new Image(item.getItemPath()));
-                    System.out.println("Selected Path: " + item.getItemPath());
+                    // System.out.println("Selected Path: " + item.getItemPath());
                     break;
                 }
             }
@@ -161,15 +160,15 @@ public class gameController {
 
     }
 
-
-    private void loadDataFromFile() {
+    @Override
+    public void loadDataFromFile() {
         try (BufferedReader reader = new BufferedReader(new FileReader("assets/db.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
                 if (parts.length == 3) {
                     items.add(new Clothes(parts[0].trim(), parts[1].trim(), parts[2].trim()));
-                    System.out.println("Loaded: " + parts[0] + ", " + parts[1] + ", " + parts[2]);
+                    // System.out.println("Loaded: " + parts[0] + ", " + parts[1] + ", " + parts[2]);
                 }
             }
             System.err.println(items.get(1));
@@ -178,60 +177,67 @@ public class gameController {
         }
     }
 
-    private void skinComboBox() {
+    @Override
+    public void skinComboBox() {
         ObservableList<String> skinNames = FXCollections.observableArrayList();
         System.out.println("Skin ComboBox");
         for (Clothes item : items) {
             if ("base".equalsIgnoreCase(item.getItemCategory())) {
                 skinNames.add(item.getItemName());
-                System.out.println("Added to ComboBox: " + item.getItemName());
+                // System.out.println("Added to ComboBox: " + item.getItemName());
             }
         }
         skinToneCB.setItems(skinNames);
     }
-    private void charComboBox() {
+
+    @Override
+    public void charComboBox() {
         ObservableList<String> charNames = FXCollections.observableArrayList();
         System.out.println("Skin ComboBox");
         for (Clothes item : items) {
             if ("tipe".equalsIgnoreCase(item.getItemCategory())) {
                 charNames.add(item.getItemName());
-                System.out.println("Added to ComboBox: " + item.getItemName());
+                // System.out.println("Added to ComboBox: " + item.getItemName());
             }
         }
         characterCB.setItems(charNames);
     }
 
-    private void ekspressionComboBox() {
+    @Override
+    public void ekspressionComboBox() {
         ObservableList<String> ekspressionNames = FXCollections.observableArrayList();
         System.out.println("Skin ComboBox");
         for (Clothes item : items) {
             if ("expression".equalsIgnoreCase(item.getItemCategory())) {
                 ekspressionNames.add(item.getItemName());
-                System.out.println("Added to ComboBox: " + item.getItemName());
+                // System.out.println("Added to ComboBox: " + item.getItemName());
             }
         }
         ekspressionCB.setItems(ekspressionNames);
     }
 
-    private void customComboBox() {
+    @Override
+    public void customComboBox() {
         ObservableList<String> bajuNames = FXCollections.observableArrayList();
         System.out.println("Skin ComboBox");
         for (Clothes item : items) {
             if ("baju".equalsIgnoreCase(item.getItemCategory())) {
                 bajuNames.add(item.getItemName());
-                System.out.println("Added to ComboBox: " + item.getItemName());
+                // System.out.println("Added to ComboBox: " + item.getItemName());
             }   
         }
         customCB.setItems(bajuNames);
     }
 
-    private void accComboBox() {
+
+    @Override
+    public void accComboBox() {
         ObservableList<String> accNames = FXCollections.observableArrayList();
         System.out.println("Skin ComboBox");
         for (Clothes item : items) {
             if ("acc".equalsIgnoreCase(item.getItemCategory())) {
                 accNames.add(item.getItemName());
-                System.out.println("Added to ComboBox: " + item.getItemName());
+                // System.out.println("Added to ComboBox: " + item.getItemName());
             }
         }
         accCB.setItems(accNames);
@@ -240,16 +246,10 @@ public class gameController {
 
     @FXML
     void downloadButton(ActionEvent event) {
-        
         hideButtons(customCB, characterCB, customCB, accCB, ekspressionCB, downloadBTN, skinToneCB);
-
-
         WritableImage snapshot = root.snapshot(new SnapshotParameters(), null);
-
         saveImageToFile(snapshot, "screenshot.png");
-
         showButtons(customCB, characterCB, customCB, accCB, ekspressionCB, downloadBTN, skinToneCB);
-
     }
 
     private void hideButtons(Node... nodes) {
@@ -265,13 +265,18 @@ public class gameController {
     }
 
 
-    private void saveImageToFile(WritableImage image, String filePath) {
+    @Override
+    public void saveImageToFile(WritableImage image, String filePath) {
         File file = new File(filePath);
         try {
             ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
-            System.out.println("Screenshot saved: " + file.getAbsolutePath());
+            System.out.println("Screenshot dsimpan: " + file.getAbsolutePath());
         } catch (IOException e) {
-            System.err.println("Failed to save screenshot: " + e.getMessage());
+            // System.err.println("gagal menyimpan screenshoot: " + e.getMessage());
+            Alert alert = new Alert(AlertType.ERROR);            
+            alert.setTitle("gagal menyimpan screenshoot");
+            alert.setContentText("Silahkan cek kembali path penyimpanan");
+            alert.showAndWait();
         }
     }
 }

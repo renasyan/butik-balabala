@@ -15,10 +15,10 @@
          </image>
       </ImageView>
       <Button fx:id="downloadBTN" layoutX="802.0" layoutY="422.0" mnemonicParsing="false" onAction="#downloadButton" prefHeight="31.0" prefWidth="127.0" text="Download" textAlignment="CENTER" />
-      <ComboBox fx:id="skinToneCB" layoutX="61.0" layoutY="77.0" onAction="#displaySkinTone" prefHeight="58.0" prefWidth="175.0" promptText="Skin Tone" />
-      <ComboBox fx:id="characterCB" layoutX="61.0" layoutY="162.0" onAction="#displayChar" prefHeight="58.0" prefWidth="175.0" promptText="Character" />
-      <ComboBox fx:id="ekspressionCB" layoutX="61.0" layoutY="241.0" onAction="#displayEx" prefHeight="58.0" prefWidth="175.0" promptText="Expression" />
-      <ComboBox fx:id="customCB" layoutX="61.0" layoutY="319.0" onAction="#displayCustom" prefHeight="58.0" prefWidth="175.0" promptText="Custom" />
+      <ComboBox fx:id="skinToneCB" layoutX="61.0" layoutY="77.0" onAction="#displaySkinTone" prefHeight="58.0" prefWidth="175.0" promptText="Skin Tone" style="-fx-background-color: #FF851B;" />
+      <ComboBox fx:id="characterCB" layoutX="61.0" layoutY="162.0" onAction="#displayChar" prefHeight="58.0" prefWidth="175.0" promptText="Character" style="-fx-background-color: #FF851B;" />
+      <ComboBox fx:id="ekspressionCB" layoutX="61.0" layoutY="241.0" onAction="#displayEx" prefHeight="58.0" prefWidth="175.0" promptText="Expression" style="-fx-background-color: #FF851B;" />
+      <ComboBox fx:id="customCB" layoutX="61.0" layoutY="319.0" onAction="#displayCustom" prefHeight="58.0" prefWidth="175.0" promptText="Custom" style="-fx-background-color: #FF851B;" />
       <StackPane layoutX="351.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="246.0" prefWidth="272.0">
          <children>
             <ImageView fx:id="baseImage" fitHeight="246.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true" />
@@ -28,6 +28,6 @@
             <ImageView fx:id="customImage" fitHeight="246.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <ComboBox fx:id="accCB" layoutX="61.0" layoutY="393.0" onAction="#displayAcc" prefHeight="58.0" prefWidth="175.0" promptText="Accessories" />
+      <ComboBox fx:id="accCB" layoutX="61.0" layoutY="393.0" onAction="#displayAcc" prefHeight="58.0" prefWidth="175.0" promptText="Accessories" style="-fx-background-color: #FF851B;" />
    </children>
 </AnchorPane>
